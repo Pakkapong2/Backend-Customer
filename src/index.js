@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const productRoute = require("./routes/product.route");
 const customerRoute = require("./routes/customer.route");
+const categoriesRoute = require("./routes/categories.route");
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
 
 app.use("/products", productRoute);
 app.use("/customers", customerRoute);
+app.use("/categories", categoriesRoute);
 
 app.listen(port, () => {
   console.log("App started at port: " + port);
